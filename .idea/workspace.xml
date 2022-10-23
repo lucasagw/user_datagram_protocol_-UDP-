@@ -42,9 +42,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ReceiverUDP">
     <configuration name="ReceiverUDP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ReceiverUDP" />
+      <module name="projet-udp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SenderUDP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SenderUDP" />
       <module name="projet-udp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -53,6 +60,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ReceiverUDP" />
+        <item itemvalue="Application.SenderUDP" />
       </list>
     </recent_temporary>
   </component>
