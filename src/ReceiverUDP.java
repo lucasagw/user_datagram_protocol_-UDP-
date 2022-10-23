@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -14,7 +15,10 @@ public class ReceiverUDP {
             int porta = 5000;
             tomada = new DatagramSocket();
 
-            byte[] cartaAEnviar = new byte[64];
+            byte[] cartaAEnviar = "documento.pdf".getBytes();
+
+            System.out.println(cartaAEnviar.length);
+
             DatagramPacket envelopeAEnviar
                     = new DatagramPacket(cartaAEnviar,
                     cartaAEnviar.length,
@@ -22,13 +26,14 @@ public class ReceiverUDP {
                     porta);
             tomada.send(envelopeAEnviar);
 
-            byte[] documento = new byte[100];
+            byte[] documento = new byte[29194];
             DatagramPacket envelopeAReceber
                     = new DatagramPacket(documento,
                     documento.length);
             tomada.receive(envelopeAReceber);
             byte[] data = envelopeAReceber.getData();
-            try (FileOutputStream fos = new FileOutputStream("documentos")) {
+            File file = new File("documentos.pdf");
+            try (FileOutputStream fos = new FileOutputStream(file)) {
                 fos.write(data);
             }
         } catch (SocketException e) {
